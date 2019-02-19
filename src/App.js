@@ -1,9 +1,13 @@
 import React, {Component} from 'react';
+import ArticleViewer from './Components/ArticleViewer';
 
 class App extends Component {
   render() {
     return (
-      <h1>Test</h1>
+      <div>
+        <h1>Test</h1>
+        <ArticleViewer />
+      </div>
     );
   }
 }
