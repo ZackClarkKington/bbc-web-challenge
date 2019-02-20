@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ArticleImage from './ArticleImage';
+import ArticleList from './ArticleList';
 
 class Article extends Component {
 
@@ -18,6 +19,11 @@ class Article extends Component {
       return (
         <ArticleImage model={element.model} />
       );
+    },
+    "list": (element) => {
+      return (
+        <ArticleList model={element.model} />
+      )
     }
   };
 
