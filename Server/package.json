@@ -1,0 +1,16 @@
+{
+  "name": "article_ranker_server",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "mocha --reporter spec ./scripts/test.js \"src/**/*.spec.js\""
+  },
+  "devDependencies": {
+    "expect": "^24.1.0",
+    "mocha": "^6.0.0"
+  }
+}
