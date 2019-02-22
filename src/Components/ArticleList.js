@@ -8,8 +8,8 @@ class ArticleList extends Component {
   populateListItems() {
     let listItems = [];
 
-    this.props.model.items.forEach(item => {
-      listItems.push(<li>{item}</li>);
+    this.props.model.items.forEach((item, index) => {
+      listItems.push(<li key={index}>{item}</li>);
     });
 
     return listItems;

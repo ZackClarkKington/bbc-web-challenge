@@ -5,24 +5,24 @@ import ArticleList from './ArticleList';
 class Article extends Component {
 
   elements = {
-    "heading": (element) => {
+    "heading": (element, index) => {
       return (
-        <h2 className="centered-text">{element.model.text}</h2>
+        <h2 key={index} className="centered-text">{element.model.text}</h2>
       );
     },
-    "paragraph": (element) => {
+    "paragraph": (element, index) => {
       return (
-        <p>{element.model.text}</p>
+        <p key={index}>{element.model.text}</p>
       );
     },
-    "image": (element) => {
+    "image": (element, index) => {
       return (
-        <ArticleImage model={element.model} />
+        <ArticleImage key={index} model={element.model} />
       );
     },
-    "list": (element) => {
+    "list": (element, index) => {
       return (
-        <ArticleList model={element.model} />
+        <ArticleList key={index} model={element.model} />
       );
     }
   };
@@ -31,9 +31,9 @@ class Article extends Component {
     super(props, context);
   }
 
-  constructElement(element){
+  constructElement(element, index){
     if(typeof(element) === 'undefined' || !this.elements.hasOwnProperty(element.type)) return null;
-    return this.elements[element.type](element);
+    return this.elements[element.type](element, index);
   }
 
   render() {
@@ -41,8 +41,8 @@ class Article extends Component {
     let title = "Loading next article...";
     if(this.props.article !== undefined){
       title = this.props.article.title;
-      this.props.article.body.forEach(element => {
-        articleBody.push(this.constructElement(element));
+      this.props.article.body.forEach((element, index) => {
+        articleBody.push(this.constructElement(element, index));
       });
     }
     return (
