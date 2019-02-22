@@ -31,9 +31,8 @@ class ArticleViewer extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
-      <div>
+      <div className="shadow padded auto-margins article-container">
         <Article article={this.state.articles[this.state.articleNum]}/>
       </div>
     );

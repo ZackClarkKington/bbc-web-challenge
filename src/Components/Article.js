@@ -7,7 +7,7 @@ class Article extends Component {
   elements = {
     "heading": (element) => {
       return (
-        <h2>{element.model.text}</h2>
+        <h2 className="centered-text">{element.model.text}</h2>
       );
     },
     "paragraph": (element) => {
@@ -37,7 +37,6 @@ class Article extends Component {
   }
 
   render() {
-    console.log(this.props);
     let articleBody = [];
     let title = "Loading next article...";
     if(this.props.article !== undefined){
@@ -47,8 +46,8 @@ class Article extends Component {
       });
     }
     return (
-      <div>
-        <h1>{title}</h1>
+      <div className="auto-margins">
+        <h1 className = "centered-text">{title}</h1>
         <div>
           {articleBody}
         </div>

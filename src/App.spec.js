@@ -7,6 +7,6 @@ configure({adapter: new Adapter()});
 const wrapper = shallow(<App />);
 describe('Index component', () => {
   it('renders an h1 element with the title Test', () => {
-    expect(wrapper.find('h1').text()).toEqual('Test');
+    expect(wrapper.find('h1').text()).toEqual('Article Ranker');
   });
 });

@@ -3,12 +3,22 @@ module.exports = {
   "mode": "development",
   "entry": path.join(__dirname, "/src/index.js"),
   "output": {
-      "path": path.join(__dirname, '/public/assets'),
+      "path": path.join(__dirname, '/public/'),
       "filename": "bundle.js",
       "publicPath": "/public/"
   },
   "devServer": {
-      "historyApiFallBack": true
+      //"historyApiFallBack": true,
+      "compress": true,
+      "publicPath": "/public/",
+      "stats": {
+          "colors": true
+      },
+      "hot": true,
+      "watchOptions": {
+          "ignored": /node_modules/
+      },
+      "port": 8081
   },
   "module": {
       "rules": [

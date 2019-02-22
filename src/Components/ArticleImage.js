@@ -13,7 +13,7 @@ class ArticleImage extends Component {
     };
 
     return(
-      <img src={this.props.model.url} alt={this.props.model.altText} style={imgStyles} />
+      <img className="auto-margins" src={this.props.model.url} alt={this.props.model.altText} style={imgStyles} />
     );
   }
 }
