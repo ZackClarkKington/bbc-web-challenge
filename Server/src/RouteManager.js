@@ -4,9 +4,16 @@ class RouteManager {
   }
 
   initRoutes() {
+    this.app.express.use('/', function(req, res, next) {
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Headers", "X-Requested-With");
+      next();
+    });
+
     this.app.express.get('/articles/:articleId', (req, res) => {
       let articleNum = req.params['articleId'];
-      res.send(JSON.stringify(this.app.store.getArticle(articleNum)));
+      res.type('json');
+      res.json(this.app.store.getArticle(articleNum));
     });
   }
 }

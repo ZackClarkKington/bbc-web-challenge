@@ -23,13 +23,12 @@ class Article extends Component {
     "list": (element) => {
       return (
         <ArticleList model={element.model} />
-      )
+      );
     }
   };
 
   constructor(props, context){
     super(props, context);
-    this.article = this.props.article;
   }
 
   constructElement(element){
@@ -38,13 +37,18 @@ class Article extends Component {
   }
 
   render() {
+    console.log(this.props);
     let articleBody = [];
-    this.article.body.forEach(element => {
-      articleBody.push(this.constructElement(element));
-    });
+    let title = "Loading next article...";
+    if(this.props.article !== undefined){
+      title = this.props.article.title;
+      this.props.article.body.forEach(element => {
+        articleBody.push(this.constructElement(element));
+      });
+    }
     return (
       <div>
-        <h1>{this.article.title}</h1>
+        <h1>{title}</h1>
         <div>
           {articleBody}
         </div>

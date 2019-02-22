@@ -12,6 +12,6 @@ new wpDevServer(webpack(wpConfig), {
     watchOptions: {
         ignored: /node_modules/
     }
-}).listen(8080, 'localhost', (err) => {
+}).listen(8081, 'localhost', (err) => {
     if(err) console.log(err);
 });

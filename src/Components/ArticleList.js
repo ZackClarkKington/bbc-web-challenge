@@ -9,7 +9,7 @@ class ArticleList extends Component {
     let listItems = [];
 
     this.props.model.items.forEach(item => {
-      listItems.push(<li>{item}</li>)
+      listItems.push(<li>{item}</li>);
     });
 
     return listItems;
@@ -29,7 +29,7 @@ class ArticleList extends Component {
         <ol>
           {listItems}
         </ol>
-      )
+      );
     }
   }
 }
