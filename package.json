@@ -30,6 +30,7 @@
     "jsdom": "^13.2.0",
     "mocha": "^5.2.0",
     "node-sass": "^4.11.0",
+    "nyc": "^13.3.0",
     "react-addons-test-utils": "^15.6.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
@@ -38,7 +39,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
-    "test": "mocha --reporter spec ./scripts/test.js \"src/**/*.spec.js\"",
+    "test": "nyc mocha --reporter spec ./scripts/test.js \"src/**/*.spec.js\"",
     "build": "webpack"
   }
 }

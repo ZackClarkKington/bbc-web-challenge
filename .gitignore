@@ -3,3 +3,4 @@ package-lock.json
 yarn.lock
 public/*.js
 public/assets/data/
+.nyc_output

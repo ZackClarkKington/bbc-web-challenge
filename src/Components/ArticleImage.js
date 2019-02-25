@@ -7,6 +7,7 @@ class ArticleImage extends Component {
   }
 
   render() {
+    //We use inline styling in order to allow the img height and width to be specified as props
     let imgStyles = {
       height: this.props.model.height,
       width: this.props.model.width

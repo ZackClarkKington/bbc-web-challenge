@@ -5,6 +5,9 @@ class ArticleList extends Component {
     super(props, context);
   }
 
+  /*
+  * populateListItems - Takes all the items passed in as props and places them into list items that can be rendered
+  */
   populateListItems() {
     let listItems = [];
 

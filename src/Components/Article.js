@@ -3,7 +3,7 @@ import ArticleImage from './ArticleImage';
 import ArticleList from './ArticleList';
 
 class Article extends Component {
-
+  //Class property containing all the elements that can be displayed within an article and functions to render each
   elements = {
     "heading": (element, index) => {
       return (
@@ -31,6 +31,10 @@ class Article extends Component {
     super(props, context);
   }
 
+  /*
+  * constructElement - Takes an element object and its' index, looks them up in Article.elements
+  * and if it finds an appropriate function will use this to render the correct element component
+  */
   constructElement(element, index){
     if(typeof(element) === 'undefined' || !this.elements.hasOwnProperty(element.type)) return null;
     return this.elements[element.type](element, index);
@@ -39,6 +43,7 @@ class Article extends Component {
   render() {
     let articleBody = [];
     let title = "Loading next article...";
+    //Here we load all the data passed as props to Article into the DOM
     if(this.props.article !== undefined){
       title = this.props.article.title;
       this.props.article.body.forEach((element, index) => {
